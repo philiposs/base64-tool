@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f1eadb" />
+    <meta name="description" content="A simple Base64 encoder and decoder." />
+    <title>Base64 - chleb.app</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="/" aria-label="Base64 home">
+          <span class="brand-mark" aria-hidden="true">64</span>
+          <span>
+            <strong>Base64</strong>
+            <small>chleb.app</small>
+          </span>
+        </a>
+        <span class="privacy"><span class="privacy-dot"></span>Runs locally in your browser</span>
+      </div>
+    </header>
+
+    <main class="shell main-content">
+      <div class="intro">
+        <p class="eyebrow">UTILITY</p>
+        <h1>Base64 converter</h1>
+        <p>Encode text to Base64 and decode it back. Your data never leaves your device.</p>
+      </div>
+
+      <section class="converter" aria-labelledby="converter-title">
+        <h2 id="converter-title" class="visually-hidden">Converter</h2>
+        <div class="mode-switch" role="tablist" aria-label="Conversion mode">
+          <button class="mode active" id="encode-tab" type="button" role="tab" aria-selected="true" data-mode="encode">
+            Encode
+          </button>
+          <button class="mode" id="decode-tab" type="button" role="tab" aria-selected="false" data-mode="decode">
+            Decode
+          </button>
+        </div>
+
+        <div class="workspace">
+          <div class="field-group">
+            <div class="field-head">
+              <label for="input">Text</label>
+              <span id="input-count">0 characters</span>
+            </div>
+            <textarea id="input" spellcheck="false" placeholder="Type or paste text..."></textarea>
+          </div>
+
+          <button class="swap-button" id="swap" type="button" title="Move result to input" aria-label="Move result to input">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 3-3m-3 3 3 3M7 7h10a3 3 0 0 1 3 3v1M17 17l-3-3m3 3-3 3m3-3H7a3 3 0 0 1-3-3v-1"/></svg>
+          </button>
+
+          <div class="field-group">
+            <div class="field-head">
+              <label for="output">Base64</label>
+              <span id="output-count">0 characters</span>
+            </div>
+            <textarea id="output" readonly placeholder="The result will appear here..."></textarea>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="check-control">
+            <input id="url-safe" type="checkbox" />
+            <span aria-hidden="true"></span>
+            URL-safe
+          </label>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+          <div class="actions">
+            <button class="button secondary" id="clear" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0 1 14h8l1-14M10 10v6m4-6v6"/></svg>
+              Clear
+            </button>
+            <button class="button primary" id="copy" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg>
+              Copy result
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-row">
+        <p>chleb.app</p>
+        <p>Simple, private, and processed locally.</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  base64-tool:
+    build: .
+    container_name: base64-tool
+    restart: unless-stopped
+    networks:
+      - chleb-apps
+
+networks:
+  chleb-apps:
+    external: true

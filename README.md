@@ -25,21 +25,22 @@ A small, private Base64 encoder and decoder that runs entirely in the browser.
 
 ## Privacy
 
-All conversion happens locally in your browser. The app has no backend, sends no input to a server, stores no conversion history, and includes no analytics.
+All conversion happens locally in your browser. The app has no backend, sends no input to a server, and stores no conversion history. Anonymous page-view and performance telemetry does not include the content entered into the converter.
 
 ## Technology
 
-The application uses plain HTML, CSS, and JavaScript with no runtime dependencies or build step. Nginx is used only when running the Docker image.
+The application is built with Vue 3 and Vite. It uses Lucide icons, Web Analytics, and Speed Insights. Nginx serves the production build when running the Docker image.
 
 ## Run locally
 
-Open `index.html` directly in a browser, or start a local HTTP server:
+Install the dependencies and start the development server:
 
 ```bash
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then open [localhost:8080](http://localhost:8080).
+Vite will print the local development address in the terminal.
 
 ## Run with Docker
 
@@ -57,13 +58,14 @@ docker compose down
 
 ```text
 .
-├── app.js          # Conversion logic and interactions
 ├── compose.yaml    # Local Docker Compose setup
 ├── Dockerfile      # Nginx container image
-├── favicon.svg     # Application icon
 ├── index.html      # Page structure
 ├── nginx.conf      # Static server and security headers
-└── styles.css      # Responsive interface styles
+├── public/          # Static assets and application icon
+├── src/             # Vue application and conversion logic
+├── styles.css       # Responsive interface styles
+└── vite.config.js   # Vite and Vue configuration
 ```
 
 ## Security headers

@@ -27,6 +27,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+.page { min-height: 100vh; display: flex; flex-direction: column; }
 button, textarea, input { font: inherit; }
 button { color: inherit; }
 .shell { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
